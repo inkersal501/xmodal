@@ -14,12 +14,13 @@ function App() {
     <div className="App">
        <h1>User Details Modal</h1>
        <button type="button" className="button" onClick={()=>openModal()}>Open Form</button>
-
-        <div className={modalOpen?"modal show":"modal"} onClick={()=>setModalOpen(false)}>
+        {modalOpen &&
+        <div className="modal" onClick={()=>setModalOpen(false)}>
           <div className="modal-content" onClick={(e)=>e.stopPropagation()}>
             <Modal />
           </div>
         </div>
+        }
 
     </div>
   );
